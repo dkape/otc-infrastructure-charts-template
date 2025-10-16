@@ -55,8 +55,8 @@ charts:
     targetRevision: 9.0.5-bitnamilegacy
     parameters:
       ingress.kibana.host: "admin.{{.Values.projectValues.rootDomain}}"
-      generatePasswords.image.repository: "iits/kubectl"
-      generatePasswords.image.tag: "1.32.4"
+      # generatePasswords.image.repository: "iits/kubectl"
+      # generatePasswords.image.tag: "1.32.4"
 # Logging Stack: Grafana, Loki, und Promtail
   loki-stack:
     namespace: monitoring                 # Dedizierter Namespace für Monitoring/Logging
