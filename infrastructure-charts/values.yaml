@@ -67,5 +67,5 @@ charts:
       "grafana.enabled": "true"
       "prometheus.enabled": "false"
       "loki.persistence.enabled": "true"
-      "loki.persistence.storageClassName": "deine-storage-class" # <-- Hier anpassen!
+      "loki.persistence.storageClassName": "csi-disk-ssd-retain-encrypted" # <-- Hier anpassen!
       "promtail.enabled": "true"
