@@ -50,3 +50,23 @@ charts:
     targetRevision: 0.25.1
     valueFile: "value-files/akhq/values.yaml"
   # Override values with local values file
+# Logging Stack: Grafana, Loki, und Promtail
+  loki-stack:
+    namespace: monitoring                 # Dedizierter Namespace für Monitoring/Logging
+    repoURL: "https://grafana.github.io/helm-charts" # Offizielles Grafana Helm Repo
+    targetRevision: 2.9.10                # Eine aktuelle, stabile Chart-Version. Prüfe ggf. auf neuere.
+    # Der Chart-Name ist 'loki-stack', daher ist kein 'overrideChartName' nötig.
+    # valueFile: "value-files/loki-stack/values.yaml" # Optional, aber SEHR empfohlen für die Konfiguration!
+    parameters:
+      # Hier ein paar grundlegende Overrides.
+      # Richtig sauber wird's mit der valueFile oben.
+      grafana:
+        enabled: true                     # Wir wollen Grafana ja haben
+      prometheus:
+        enabled: false                    # Wichtig: Deaktivieren, wenn du Prometheus separat deployen willst
+      loki:
+        persistence:
+          enabled: true
+          storageClassName: "cs-disk-ssd-retain-encrypted" # WICHTIG: Ersetze das mit deiner StorageClass!
+      promtail:
+        enabled: true                     # Der Agent, der die Logs sammelt
