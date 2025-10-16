@@ -52,7 +52,7 @@ charts:
   # Override values with local values file
   elastic-operator:
     namespace: monitoring
-    targetRevision: 8.18.1
+    targetRevision: elastic-operator-9.0.5-bitnamilegacy
     parameters:
       ingress.kibana.host: "admin.{{.Values.projectValues.rootDomain}}"
 # Logging Stack: Grafana, Loki, und Promtail
