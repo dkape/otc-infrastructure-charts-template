@@ -62,7 +62,7 @@ charts:
     targetRevision: 2.9.10                # Eine aktuelle, stabile Chart-Version. Prüfe ggf. auf neuere.
     # Der Chart-Name ist 'loki-stack', daher ist kein 'overrideChartName' nötig.
     # valueFile: "value-files/loki-stack/values.yaml" # Optional, aber SEHR empfohlen für die Konfiguration!
-parameters:
+    parameters:
       # Hier die korrigierte, flache Struktur:
       "grafana.enabled": "true"
       "prometheus.enabled": "false"
